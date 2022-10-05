@@ -1,5 +1,52 @@
 # api-requirements
 
+The api was built with Laravel version 9
+## Steps to run application
+1) clone the repository
+2) create a copy of .env.example <br/>
+```
+cp .env.example .env
+```
+3) Install dependencies
+```
+composer install
+```
+4) Generate an application key
+```
+php artisan key:generate
+```
+5) Create database with products data
+```
+php artisan migrate --seed 
+```
+6) Start application
+```
+php artisan serve
+```
+
+## Products API
+
+All products
+```
+GET /api/products
+```
+
+Filter Products by category
+```
+GET /api/products?category=insurance
+GET /api/products?category=vehicle
+```
+
+Filter Products by price
+```
+GET /api/products?price=89000
+```
+
+Combine category and price filter
+```
+/api/products?category=insurance&price=89000
+```
+
 ## Description
 We want you to implement a REST API endpoint that given a list of products, applies some
 discounts to them and can be filtered.
